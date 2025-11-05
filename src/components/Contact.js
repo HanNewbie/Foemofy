@@ -57,12 +57,24 @@ export default function ContactSection() {
 
         <div>
           <h4 className="text-lg font-semibold mb-4">Contact</h4>
-          <ul className="space-y-3 text-sm">
-            <li><FontAwesomeIcon icon={faPhone} className="mr-2" /> (406) 555-0120</li>
-            <li><FontAwesomeIcon icon={faEnvelope} className="mr-2" /> hello@foemofy.com</li>
-            <li><FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" /> Jl. Merdeka No. 45, Jakarta</li>
+          <ul className="space-y-3 text-sm text-gray-700">
+            <li className="flex items-start">
+              <FontAwesomeIcon icon={faPhone} className="mr-3 mt-1 w-4 min-w-4 text-black" />
+              <span>+62 877-2218-6334</span>
+            </li>
+            <li className="flex items-start">
+              <FontAwesomeIcon icon={faEnvelope} className="mr-3 mt-1 w-4 min-w-4 text-black" />
+              <span>fomofy4@gmail.com</span>
+            </li>
+            <li className="flex items-start">
+              <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-3 mt-1 w-4 min-w-4 text-black" />
+              <span className="max-w-xs leading-relaxed">
+                Jl. DI Panjaitan No.128, Karangreja, Purwokerto Kidul, Kec. Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah
+              </span>
+            </li>
           </ul>
         </div>
+
       </div>
     </footer>
   );

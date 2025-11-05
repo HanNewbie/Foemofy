@@ -34,7 +34,7 @@ export default function ServicesSection() {
           className="flex justify-center"
         >
           <video
-            src="/video/sead.mov"
+            src="/video/fmy.mp4"
             autoPlay
             muted
             loop
