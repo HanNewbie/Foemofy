@@ -1,7 +1,12 @@
 "use client";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Volume2, VolumeX } from "lucide-react";
 
 export default function ServicesSection() {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
+
   const services = [
     {
       title: "Promotion",
@@ -12,6 +17,22 @@ export default function ServicesSection() {
       desc: "Strategi pemasaran digital untuk meningkatkan jangkauan dan konversi brand Anda.",
     },
   ];
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {
+        console.log("Autoplay diblokir browser, akan berjalan setelah interaksi user");
+      });
+    }
+  }, []);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
 
   return (
     <section
@@ -36,14 +57,28 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="flex justify-center order-1 md:order-none"
         >
-          <video
-            src="/video/fmy.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-[220px] h-[400px] sm:w-[260px] sm:h-[460px] md:w-[280px] md:h-[480px] rounded-3xl shadow-xl object-cover border-4 border-white"
-          ></video>
+          <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+            <video
+              ref={videoRef}
+              src="/video/fmy.mp4"
+              autoPlay
+              playsInline
+              loop
+              muted={isMuted}
+              className="w-[220px] h-[400px] sm:w-[260px] sm:h-[460px] md:w-[280px] md:h-[480px] object-cover"
+            ></video>
+
+            <button
+              onClick={toggleMute}
+              className="absolute bottom-3 right-3 bg-white/80 hover:bg-white text-blue-600 p-2 rounded-full shadow-md transition"
+            >
+              {isMuted ? (
+                <VolumeX className="w-5 h-5" />
+              ) : (
+                <Volume2 className="w-5 h-5" />
+              )}
+            </button>
+          </div>
         </motion.div>
 
         <motion.div
