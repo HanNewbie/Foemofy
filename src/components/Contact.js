@@ -12,7 +12,7 @@ export default function ContactSection() {
           Ready to work with us?
         </h2>
         <button className="bg-white text-black font-semibold px-8 py-3 rounded-full shadow hover:bg-gray-100 transition">
-          Get Started →
+         <a href="https://linktr.ee/foemofy"> Get Started →</a>
         </button>
       </div>
 
