@@ -5,9 +5,8 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative py-28 bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden scroll-mt-10"
+      className="relative py-28 bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden scroll-mt-11"
     >
-      {/* Background gradient blur */}
       <div className="absolute inset-0 -z-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -23,7 +22,6 @@ export default function AboutSection() {
         />
       </div>
 
-      {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +46,6 @@ export default function AboutSection() {
           />
         </motion.div>
 
-        {/* Description */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
