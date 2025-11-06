@@ -16,7 +16,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-20 bg-gray-50 overflow-hidden scroll-mt-10"
+      className="py-20 bg-gray-50 overflow-hidden scroll-mt-16"
     >
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
